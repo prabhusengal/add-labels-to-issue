@@ -4,7 +4,7 @@ author: 'Bright Ran'
 
 inputs:
   repository:
-    description: 'The name of the repository which the pull request is in. For example, ActionsRML/latest-commit-on-PR'
+    description: 'The name of the repository which the issue or PR is in. For example, ActionsRML/latest-commit-on-PR'
     required: true
     default: ${{ github.repository }}
   issue_number:
