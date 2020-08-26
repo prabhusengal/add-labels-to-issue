@@ -4,15 +4,18 @@ author: 'Bright Ran'
 
 inputs:
   repository:
-    description: 'The name of the repository which the issue or PR is in. For example, ActionsRML/latest-commit-on-PR'
+    description: 'The name of the repository which the issue or PR is in. For example, ActionsRML/add-labels-to-issue'
     required: true
     default: ${{ github.repository }}
   issue_number:
     description: 'The number of the issue or PR.'
     required: true
-    default: ${{ github.event.pull_request.number }}
+    default: 'current'
+  labels:
+    description: 'The labels to add.'
+    required: true
   token:
-    description: 'Personal access token (PAT) used to authenticate.'
+    description: 'The Personal access token (PAT) used to authenticate.'
     default: ${{ github.token }}
 
 runs:
@@ -20,5 +23,5 @@ runs:
   main: 'dist/index.js'
 
 branding:
-  icon: 'filter'
-  color: 'green'
+  icon: 'edit'
+  color: 'blue'
