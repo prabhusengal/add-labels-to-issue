@@ -1,5 +1,5 @@
-name: 'Add labels to an issue or PR'
-description: 'An action to add labels to an issue or PR.'
+name: 'Add labels to issue or PR'
+description: 'An action to add labels to issue or PR.'
 author: 'Bright Ran'
 
 inputs:
