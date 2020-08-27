@@ -3,7 +3,7 @@ async function run() {
       // Fetch all the inputs
       const core = require("@actions/core");
       const repository = core.getInput('repository');
-      const issue_number = core.getInput('issue_number');
+      const issuenumber = core.getInput('issue_number');
       const labels = core.getInput('labels').split("\n").filter((x) => x !== "");
       const token = core.getInput('token');
       
@@ -15,13 +15,15 @@ async function run() {
       }
 
       const repo_owner = splitRepository[0];
-      const repo_name = splitRepository[1];     
-      
+      const repo_name = splitRepository[1];
+
+      const github = require('@actions/github');
+      issue_number = github.context.payload.number;
       console.log(`before check: `, issue_number);
-      if (issue_number === "current")
+      
+      if (issuenumber != "current")
       {
-        const github = require('@actions/github');
-        issue_number = github.context.payload.number;
+        issue_number = issuenumber;
         console.log(`after check: `, issue_number);
       }
 
