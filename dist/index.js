@@ -21,6 +21,7 @@ async function run() {
       {
         const github = require('@actions/github');
         issue_number = github.context.payload.number;
+        console.log(issue_number);
       }
 
 
