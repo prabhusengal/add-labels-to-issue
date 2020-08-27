@@ -18,14 +18,11 @@ async function run() {
       const repo_name = splitRepository[1];
 
       const github = require('@actions/github');
-      issue_number = github.context.payload.number;
-      console.log(`before check:`, issue_number);
-      
+      issue_number = github.context.payload.number;      
       if (issuenumber != "current")
       {
         issue_number = issuenumber;
       }
-      console.log(`after check:`, issue_number);
 
       // Execute the API "Add labels to an issue", see 'https://octokit.github.io/rest.js/v18#issues-add-labels'
       const { Octokit } = require("@octokit/rest");
@@ -36,8 +33,20 @@ async function run() {
         issue_number: issue_number,
         labels: labels
       });
+      console.log(`response.data:`);
       console.log(response.data);
-            
+      console.log(`>`);
+      console.log(`>`);
+      console.log(`response.headers:`);
+      console.log(response.headers);
+      console.log(`>`);
+      console.log(`>`);
+      console.log(`response.status:`);
+      console.log(response.status);
+      console.log(`>`);
+      console.log(`>`);
+      console.log(`response.url:`);
+      console.log(response.url);
     }
     catch (error) {
       core.setFailed(error.message);
