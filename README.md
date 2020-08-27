@@ -41,7 +41,7 @@ Personal access token (PAT) used to authenticate.
 ##
 
 
-## Example workflow
+## Example workflows
 ### Add a single label
 ```yaml
 jobs:
