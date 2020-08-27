@@ -27,26 +27,12 @@ async function run() {
 
       // Execute the API "Add labels to an issue", see 'https://octokit.github.io/rest.js/v18#issues-add-labels'
       const octokit = new Octokit({ auth: token });
-      const response = await octokit.issues.addLabels({
+      await octokit.issues.addLabels({
         owner: repo_owner,
         repo: repo_name,
         issue_number: issue_number,
         labels: labels
       });
-      console.log(`response.data:`);
-      console.log(response.data);
-      console.log(`>`);
-      console.log(`>`);
-      console.log(`response.headers:`);
-      console.log(response.headers);
-      console.log(`>`);
-      console.log(`>`);
-      console.log(`response.status:`);
-      console.log(response.status);
-      console.log(`>`);
-      console.log(`>`);
-      console.log(`response.url:`);
-      console.log(response.url);
     }
     catch (error) {
       core.setFailed(error.message);
