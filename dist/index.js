@@ -25,7 +25,7 @@ async function run() {
       {
         issue_number = issuenumber;
       }
-      console.log(`after check: `, issue_number);
+      console.log(`after check:`, issue_number);
 
       // Execute the API "Add labels to an issue", see 'https://octokit.github.io/rest.js/v18#issues-add-labels'
       const { Octokit } = require("@octokit/rest");
