@@ -3,38 +3,32 @@ The GitHub Action to add labels to issue or PR. This Action (written in JavaScri
 
 ## Inputs
 ### 1. `repository`
-#### Required:
-YES
+#### Required: YES
 
-#### Default:
-`${{ github.repository }}`
+#### Default: `${{ github.repository }}`
 
 #### Description:
 The name of the repository which the issue or PR is in. E.g. '**ActionsRML/add-labels-to-issue**'.
 
 
 ### 2. `issue_number`
-#### Required:
-YES
+#### Required: YES
 
-#### Default:
-`current`
+#### Default: `current`
 
 #### Description:
 The number of the issue or PR. <BR/>When no issue/PR number provided, the value is set to '**current**', the number of the issue/PR that triggers current workflow run will be used by default. If do not find a valid number or the provided number is invalid, you may get the "**Not Found**" error.
 
 
 ### 3. `labels`
-#### Required:
-YES
+#### Required: YES
 
 #### Description:
 The labels you want to add. You can provide one or more labels.
 
 
 ### 4. `token`
-#### Default:
-`${{ github.token }}`
+#### Default: `${{ github.token }}`
 
 #### Description:
 Personal access token (PAT) used to authenticate.
