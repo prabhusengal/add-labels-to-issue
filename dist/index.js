@@ -17,11 +17,12 @@ async function run() {
       const repo_owner = splitRepository[0];
       const repo_name = splitRepository[1];     
       
+      console.log(`before check: `, issue_number);
       if (issue_number === "current")
       {
         const github = require('@actions/github');
         issue_number = github.context.payload.number;
-        console.log(issue_number);
+        console.log(`after check: `, issue_number);
       }
 
 
