@@ -1,7 +1,9 @@
 async function run() {
+    const core = require("@actions/core");
+    const github = require('@actions/github');
+    const { Octokit } = require("@octokit/rest");
     try {
       // Fetch all the inputs
-      const core = require("@actions/core");
       const repository = core.getInput('repository');
       const issuenumber = core.getInput('issue_number');
       const labels = core.getInput('labels').split("\n").filter((x) => x !== "");
@@ -17,7 +19,6 @@ async function run() {
       const repo_owner = splitRepository[0];
       const repo_name = splitRepository[1];
 
-      const github = require('@actions/github');
       issue_number = github.context.payload.number;      
       if (issuenumber != "current")
       {
@@ -25,7 +26,6 @@ async function run() {
       }
 
       // Execute the API "Add labels to an issue", see 'https://octokit.github.io/rest.js/v18#issues-add-labels'
-      const { Octokit } = require("@octokit/rest");
       const octokit = new Octokit({ auth: token });
       const response = await octokit.issues.addLabels({
         owner: repo_owner,
