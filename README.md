@@ -1,5 +1,5 @@
 # add-labels-to-issue v1
-The GitHub Action to add labels to issue or PR. This Action (written in JavaScript) wraps the "[Add labels to an issue](https://docs.github.com/en/rest/reference/issues#add-labels-to-an-issue)" REST API<BR/>
+The GitHub Action to add labels to issue or PR. This Action (written in JavaScript) wraps the "[Add labels to an issue](https://docs.github.com/en/rest/reference/issues#add-labels-to-an-issue)" REST API.
 
 ## Inputs
 ### 1. `repository`
