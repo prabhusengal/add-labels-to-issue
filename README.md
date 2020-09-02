@@ -17,7 +17,7 @@ The name of the repository which the issue or PR is in. E.g. '**ActionsRML/add-l
 #### Default: `current`
 
 #### Description:
-The number of the issue or PR. <BR/>When no issue/PR number provided, the value is set to '**current**', the number of the issue/PR that triggers current workflow run will be used by default. If do not find a valid number or the provided number is invalid, you may get the "**Not Found**" error.
+The number of the issue or PR. <BR/>When no issue/PR number provided, the value is set to '**current**', the number of the issue/PR that triggers current workflow run will be used by default. If do not find a valid number or the provided number is invalid, the "**Not Found**" error returned.
 
 
 ### 3. `labels`
