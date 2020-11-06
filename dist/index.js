@@ -26,7 +26,7 @@ async function run() {
       const title = github.context.payload.head_commit.message
       console.log(title)
 
-      if(title && title.toLowerCase().indexOf("issues: ")) {
+      if (title && title.toLowerCase().indexOf("issues: ")) {
         var issuesStartIndex = title.toLowerCase().indexOf("issues: ") + 8;
         var issuesSubStr = title.substring(issuesStartIndex);
         var issues = issuesSubStr.split(",");
@@ -34,20 +34,20 @@ async function run() {
           return parseInt(a.trim())
         })
         console.log(issue_nums)
+        issuenumbers = issue_nums
       }
 
       //Execute the API "Add labels to an issue", see 'https://octokit.github.io/rest.js/v18#issues-add-labels'
       const { Octokit } = require("@octokit/rest");
       const octokit = new Octokit({ auth: token });
-      issue_numbers.forEach(a => {
+      for (const issue of issuenumbers) {
         await octokit.issues.addLabels({
           owner: repo_owner,
           repo: repo_name,
-          issue_number: a,
+          issue_number: issue,
           labels: labels
         });
-      });
-
+      }
     }
   }
   catch (error) {
