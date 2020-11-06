@@ -23,7 +23,7 @@ async function run() {
       console.log(repo_owner)
       console.log(repo_name)
       console.log(JSON.stringify(github))
-      const title = github.payload.head_commit.message
+      const title = github.context.payload.head_commit.message
       console.log(title)
 
       if(title && title.toLowerCase().indexOf("issues: ")) {
