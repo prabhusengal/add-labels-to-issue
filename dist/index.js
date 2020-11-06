@@ -17,13 +17,13 @@ async function run() {
 
     const github = require('@actions/github');
 
-    console.log(issuenumbers)
-    console.log(labels)
-    console.log(repo_owner)
-    console.log(repo_name)
-    console.log(JSON.stringify(github))
+    // console.log(issuenumbers)
+    // console.log(labels)
+    // console.log(repo_owner)
+    // console.log(repo_name)
+    // console.log(JSON.stringify(github))
     const title = github.context.payload.head_commit.message
-    console.log(title)
+    // console.log(title)
 
     if (title && title.toLowerCase().indexOf("issues: ")) {
       var issuesStartIndex = title.toLowerCase().indexOf("issues: ") + 8;
