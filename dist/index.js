@@ -6,7 +6,7 @@ async function run() {
     const issuenumbers = core.getInput('issue_number');
     const labels = core.getInput('labels').split("\n").filter((x) => x !== "");
     const token = core.getInput('token');
-    if (issuenumbers != current) {
+    if (issuenumbers != 'current') {
       // Split the input 'repository' (format {owner}/{repo}) to be {owner} and {repo}
       const splitRepository = repository.split('/');
       if (splitRepository.length !== 2 || !splitRepository[0] || !splitRepository[1]) {
