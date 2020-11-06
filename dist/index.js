@@ -25,7 +25,7 @@ async function run() {
     const title = github.context.payload.head_commit.message
     // console.log(title)
 
-    if (title && title.toLowerCase().indexOf("issues: ")) {
+    if (title && title.toLowerCase().indexOf("issues: ") > -1) {
       var issuesStartIndex = title.toLowerCase().indexOf("issues: ") + 8;
       var issuesSubStr = title.substring(issuesStartIndex);
       var issues = issuesSubStr.split(",");
