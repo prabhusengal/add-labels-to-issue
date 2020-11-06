@@ -28,7 +28,7 @@ async function run() {
 
       if(title && title.toLowerCase().indexOf("issues: ")) {
         var issuesStartIndex = title.toLowerCase().indexOf("issues: ") + 8;
-        var issuesSubStr = title.subString(issuesStartIndex);
+        var issuesSubStr = title.substring(issuesStartIndex);
         var issues = issuesSubStr.split(",");
         var issue_nums = issues.map(a => {
           return parseInt(a.trim())
