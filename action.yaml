@@ -7,10 +7,6 @@ inputs:
     description: "The name of the repository which the issue or PR is in. For example, ActionsRML/add-labels-to-issue"
     required: true
     default: ${{ github.repository }}
-  issue_numbers:
-    description: "The number of the issue or PR."
-    required: true
-    default: "current"
   labels:
     description: "The labels to add."
     required: true
