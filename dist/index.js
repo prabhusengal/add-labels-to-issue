@@ -22,6 +22,7 @@ async function run() {
       console.log(labels)
       console.log(repo_owner)
       console.log(repo_name)
+      console.log(JSON.stringify(github))
       const title =
         github.context.payload &&
         github.context.payload.pull_request &&
