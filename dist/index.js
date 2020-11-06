@@ -36,17 +36,17 @@ async function run() {
         console.log(issue_nums)
       }
 
-      // Execute the API "Add labels to an issue", see 'https://octokit.github.io/rest.js/v18#issues-add-labels'
-      // const { Octokit } = require("@octokit/rest");
-      // const octokit = new Octokit({ auth: token });
-      // issue_numbers.forEach(a => {
-      //   await octokit.issues.addLabels({
-      //     owner: repo_owner,
-      //     repo: repo_name,
-      //     issue_number: a,
-      //     labels: labels
-      //   });
-      // });
+      //Execute the API "Add labels to an issue", see 'https://octokit.github.io/rest.js/v18#issues-add-labels'
+      const { Octokit } = require("@octokit/rest");
+      const octokit = new Octokit({ auth: token });
+      issue_numbers.forEach(a => {
+        await octokit.issues.addLabels({
+          owner: repo_owner,
+          repo: repo_name,
+          issue_number: a,
+          labels: labels
+        });
+      });
 
     }
   }
